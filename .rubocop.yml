@@ -1,0 +1,38 @@
+LineLength:
+  Max: 120  
+
+MethodLength:
+  Max: 15
+
+Metrics/AbcSize: 
+  Max: 20
+
+Style/Documentation:
+  Exclude:
+    - 'app/mailers/**'
+    - 'app/jobs/**'
+    - 'app/helpers/**'
+    - 'app/models/application_record.rb'
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'app/mailers/**'
+    - 'app/helpers/**'
+    - 'app/jobs/**'
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'config/**/*'
+    - 'recruiting_dashboard_front/**/*'
+    - 'app/channels/**/*'
+    - 'config.ru'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'db/migrate/**/*'
+    - 'lib/tasks/**/*'
+    - 'test/**/*'
