@@ -36,3 +36,5 @@ AllCops:
     - 'db/migrate/**/*'
     - 'lib/tasks/**/*'
     - 'test/**/*'
+    - 'spec/**/*'
+    - 'db/seeds.rb'
