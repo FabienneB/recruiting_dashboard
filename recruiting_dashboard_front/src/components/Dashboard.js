@@ -28,6 +28,8 @@ class Dashboard extends React.Component{
     var uri = process.env.REACT_APP_DASHBOARD_API_URI +'/api/v1/candidates/' + candidate.id;
     axios.put(uri, params).catch((error) => {
       console.log(error);
+    }).catch((error) => {
+      console.log(error);
     });
   }
 
@@ -74,7 +76,7 @@ class Dashboard extends React.Component{
         )
       });
       return (
-        <div id='dashboard'>
+        <div id='dashboard' className='dashboard'>
           <div id='column' className='waiting' 
                onDragOver={(e)=>{this.onDragOver(e)}}
                onDrop={(e)=>this.onDrop(e, 'waiting')}>

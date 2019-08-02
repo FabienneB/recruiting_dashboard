@@ -9,7 +9,7 @@ class Dropdown extends Component{
     this.state = {
       listOpen: false,
       list: this.props.list,
-      headerTitle: this.props.title, 
+      headerTitle: this.props.title
     }
     this.close = this.close.bind(this);
   }

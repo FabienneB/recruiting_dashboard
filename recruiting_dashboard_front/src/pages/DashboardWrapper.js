@@ -5,10 +5,9 @@ import { faBell } from '@fortawesome/free-solid-svg-icons';
 import DropDown from '../components/DropDown';
 import Dashboard from '../components/Dashboard';
 import axios from 'axios';
-import Alert from 'react-bootstrap/Alert';
 
 
-class DashboardNavbar extends React.Component{
+class DashboardWrapper extends React.Component{
   constructor() {
     super()
     this.state = {
@@ -16,24 +15,28 @@ class DashboardNavbar extends React.Component{
       candidates: [],
       selectedJobTitle: null,
       selectedJobId: null, 
-      displayDropdown: false, 
-      showError: true,
-      error: null
+      displayDropdown: false
     }
   }
 
   componentDidMount() {
+    this._isMounted = true;
     axios.get(process.env.REACT_APP_DASHBOARD_API_URI+'/api/v1/job_openings')
       .then(res => {
         const jobs = [];
         res.data.job_openings.forEach(function(job) {
           jobs.push(job);
         });
-        this.setState({ jobs });
+        if (this._isMounted) {
+          this.setState({ jobs });
+        }
     }).catch((error) => {
-      this.setState({ showError: true, error: error });
       console.log(error);
     });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   resetThenSet = (id, title) => {
@@ -48,8 +51,6 @@ class DashboardNavbar extends React.Component{
   }
 
   loadCandidates = (jobId) => {
-    console.log('load');
-    console.log(jobId);
     axios.get(process.env.REACT_APP_DASHBOARD_API_URI + '/api/v1/candidates?job_id='+ jobId)
       .then(res => {
         const candidates = [];
@@ -59,7 +60,6 @@ class DashboardNavbar extends React.Component{
         });
         this.setState({ candidates });
     }).catch((error) => {
-      this.setState({ showError: true, error: error });
       console.log(error);
     });
   }
@@ -72,13 +72,10 @@ class DashboardNavbar extends React.Component{
 
   render() {
       return (
-        <div>
-          <Alert variant='danger' show={this.state.showError}>
-            {this.state.error}
-          </Alert>
+        <div className='dashboard-wrapper'>
           <div id='flex-box'>
             <div className='dashboard-icons'>
-              <FontAwesomeIcon icon={faBars} onClick={this.onClick} className='stream-icon' />
+              <FontAwesomeIcon icon={faBars} onClick={this.onClick} className='stream-icon click' />
               { this.state.displayDropdown ? <DropDown
                                                 title='Select a position'
                                                 list={this.state.jobs}
@@ -93,4 +90,4 @@ class DashboardNavbar extends React.Component{
   }
 }
 
-export default DashboardNavbar;
+export default DashboardWrapper;
