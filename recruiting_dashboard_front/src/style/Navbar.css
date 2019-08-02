@@ -1,0 +1,17 @@
+#nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #37CBAA;
+}
+
+#nav img {
+  width: 5%;
+  height: auto;
+  padding: 5px;
+}
+
+#stream-icons {
+  height: auto;
+  padding-top: 2%;
+  width: 5%;
+}

@@ -1,0 +1,14 @@
+@import 'Dashboard.css';
+@import 'DashboardWrapper.css';
+@import 'index.css';
+@import 'Navbar.css';
+@import 'DropDown.css';
+
+.App {
+  text-align: center;
+  width: 100%;
+}
+
+.alert-danger {
+  background-color: red;
+}
