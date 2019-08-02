@@ -7,20 +7,18 @@ class Api::V1::CandidatesController < ApplicationController
 
   def index
     job_id = params['job_id']
-    candidates = (job_id && !job_id.empty?) ? Candidate.job_candidates(job_id) : Candidate.all
+    candidates = job_id && !job_id.empty? ? Candidate.job_candidates(job_id) : Candidate.all
     render(json: { candidates: candidates }, status: 200)
   end
 
   def update
-    begin
-      if @candidate.update(candidate_params)
-        render json: { candidate: @candidate } and return
-      else
-        render(json: { error: @candidate.errors[:base] }, status: 422) and return
-      end
-    rescue => e
-      render json: { error: e }, status: 422
+    if @candidate.update(candidate_params)
+      render json: { candidate: @candidate }
+    else
+      render(json: { error: @candidate.errors[:base] }, status: 422)
     end
+  rescue StandardError => e
+    render json: { error: e }, status: 422
   end
 
   private

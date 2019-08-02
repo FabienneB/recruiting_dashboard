@@ -35,3 +35,8 @@
 
 # Ignore front development file 
 /recruiting_dashboard_front/.env.development
+
+.DS_Store
+.rspec
+log/
+.rubocop.yml

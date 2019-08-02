@@ -5,5 +5,5 @@
 class Candidate < ApplicationRecord
   belongs_to :job_opening
   validates :first_name, :last_name, :category, :job_name, presence: true
-  scope :job_candidates, -> (id) { where(job_opening_id: id) }
+  scope :job_candidates, ->(id) { where(job_opening_id: id) }
 end
