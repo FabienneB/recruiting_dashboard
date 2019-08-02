@@ -1,0 +1,36 @@
+#dashboard-nav {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  background-color: #563686;
+  width: 90%;
+}
+
+.stream-icon {
+  color: white; 
+  width: auto;
+  max-width: 30px;
+  height: auto;
+}
+
+#bell-icon {
+  width: auto;
+  max-width: 20px;
+}
+
+#flex-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dashboard-icons {
+  padding: 5px;
+  padding-top: 12px;
+  background-color: #290068;
+  width: 5%;
+}
+
+.fa-bars, .fa-stream {
+  min-width: 25px;
+}
