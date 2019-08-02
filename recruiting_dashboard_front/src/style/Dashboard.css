@@ -13,15 +13,22 @@
   height: 95vh;
 }
 
-#column-title {
-  margin-top: 0px;
-  padding: 5px;
+#column-header {
+  font-weight: bold;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.column-title {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
   height: 8%;
   vertical-align: middle;
   box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2);
 }
 
-.card {
+.card-wrapper {
   overflow: hidden;
   background: white;
   height: 30%;
@@ -30,12 +37,16 @@
   object-fit: cover;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card {
   position: relative;
   display: flex;
   justify-content: space-between;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,0.1);
 }
 
 .avatar {
@@ -64,4 +75,36 @@
   position: absolute;
   left: 16px;
   top: 8px;
+}
+
+.card-bottom {
+  width: 100%;
+  padding: 5
+}
+
+.candidate-count {
+  width: 30px;
+  height: 30px; 
+  background-color: lightgrey;
+  border-radius: 50%;
+}
+
+.icon-bell {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+}
+
+.color-icon {
+  color: lightgrey !important;
+}
+.icon-thumb {
+  position: absolute;
+  left: 30px;
+  bottom: 5px;
+}
+.icon-bottom {
+  padding-bottom: 15px;
+  padding-left: 20px;
+  text-align: left;
 }

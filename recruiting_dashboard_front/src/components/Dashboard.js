@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
 class Dashboard extends React.Component{
   constructor(props) {
@@ -54,15 +55,20 @@ class Dashboard extends React.Component{
       filteredCandidates[candidate.category].push(
         <div key={candidate.name} 
           onDragStart = {(e) => this.onDragStart(e, candidate.name)}
-          draggable='true' className='card draggable'
+          draggable='true' className='draggable card-wrapper'
         >
-          <div className='avatar'>
-            <img src={candidate.avatar_link} alt='avatar' className='card-user' />
+          <div className='card'>
+            <div className='avatar'>
+              <img src={candidate.avatar_link} alt='avatar' className='card-user' />
+              <FontAwesomeIcon icon={faBell} className='icon-bell color-icon' />
+            </div>
+            <div className='card-infos'>
+              <h2>{ candidate.name }</h2> 
+              <p>{ candidate.job_name }</p>
+            </div>
           </div>
-          <div className='card-infos'>
-            <h2>{ candidate.name }</h2>
-            <p>{ candidate.job_name }</p>
-            <FontAwesomeIcon icon={faBell} className='stream-icon' id='bell-icon' />
+          <div className='card-bottom'>
+            <div className='icon-bottom'> <FontAwesomeIcon icon={faThumbsUp} className='color-icon' /> { candidate.approval_count } </div>
           </div>
         </div>
         )
@@ -72,14 +78,20 @@ class Dashboard extends React.Component{
           <div id='column' className='waiting' 
                onDragOver={(e)=>{this.onDragOver(e)}}
                onDrop={(e)=>this.onDrop(e, 'waiting')}>
-            <h2 id='column-title'> To see </h2>
+            <div className='column-title'> 
+              <div id='column-header'> To see</div> 
+              <div className='candidate-count'> {filteredCandidates.waiting.length} </div> 
+            </div> 
             {filteredCandidates.waiting}
           </div>
 
           <div id='column' className='droppable' 
                onDragOver={(e)=>{this.onDragOver(e)}}
                onDrop={(e)=>this.onDrop(e, 'interview')}>
-            <h2 id='column-title'> Interview </h2>
+            <div className='column-title'> 
+              <div id='column-header'> Interview </div> 
+              <div className='candidate-count'> {filteredCandidates.interview.length} </div> 
+            </div>
             {filteredCandidates.interview}
           </div>
         </div>

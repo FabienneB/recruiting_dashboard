@@ -85,7 +85,7 @@ class DashboardNavbar extends React.Component{
                                                 resetThenSet={this.resetThenSet} /> : null }
             </div>
             <div id='dashboard-nav'> {this.state.selectedJobTitle} </div>
-            <div className='dashboard-icons'><FontAwesomeIcon icon={faBell} className='stream-icon' id='bell-icon' /></div>
+            <div className='dashboard-icons'><FontAwesomeIcon icon={faBell} className='stream-icon' /></div>
           </div>
           <Dashboard filteredCandidates={this.state.candidates} />
         </div>
