@@ -1,5 +1,8 @@
-## Recruiting Dashboard
+## Recruiting Dashboard front
 
+### Introduction
+
+This React app is a recruiting dashboard with 2 columns, a navbar, and a dropdown component. When the DashboardWrapper is mounted, the jobs available are loaded (thanks to recruiting_dashboard API). It's possible to select a job with the dropdown and all the applicant for this job are loaded and displayed through a card.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -73,3 +76,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### Plugins
 
 - axios: https://www.npmjs.com/package/axios
+- react react-testing-library:  https://github.com/testing-library/react-testing-library
+- dotenv: https://github.com/motdotla/dotenv

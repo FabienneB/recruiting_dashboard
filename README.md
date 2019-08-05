@@ -1,8 +1,9 @@
-## Recruiting Dashboard
+## Recruiting Dashboard API
 
 ### Introduction
 
-This RoR API allows to load candidates and job openings data and to update candidate 
+This RoR API allows to load candidates and job openings data. It's also possible to update candidate category. 
+The API client's README is available > recruiting_dashboard_dront > README.
 
 #### List job_openings
 ```
