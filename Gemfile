@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.4'
+ruby '2.6.3'
 
 # Run against the latest stable release
 group :development, :test do

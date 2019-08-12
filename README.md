@@ -64,7 +64,7 @@ spec
 
 ## Ruby and rails version
 
-ruby '2.3.4'
+ruby '2.6.3'
 rails '5.2.3'
 
 
