@@ -96,4 +96,4 @@ rails db:seed
 Feel free to hit me up on:
 
 [Email] (fabienne.bremond@gmail.com)
-[GitHub] (https://github.com/FabienneB/elephant_overview)
+[GitHub] (https://github.com/FabienneB/)
